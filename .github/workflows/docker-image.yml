@@ -54,7 +54,7 @@ jobs:
       build_args: |
         PYTHON_VERSION=${{ matrix.python_version }}
       post_build_script: |
-          PYTHON_VERSION=$(podman run --rm --entrypoint uv localhost/${{ github.event.repository.name }} python list | grep -v "download available" | cut -d"-" -f2)
+          PYTHON_VERSION=$(podman run --rm --entrypoint /usr/local/bin/uv localhost/${{ github.event.repository.name }} python list | grep -v "download available" | cut -d"-" -f2)
           echo "- PYTHON version: $PYTHON_VERSION" >> $GITHUB_STEP_SUMMARY
           PYTHON_SHORT_VERSION=$(echo "$PYTHON_VERSION" | cut -d"." -f 1,2)
 

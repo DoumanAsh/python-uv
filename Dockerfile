@@ -2,7 +2,7 @@
 ARG DEBIAN_VERSION=trixie
 FROM dhi.io/debian-base:$DEBIAN_VERSION-dev as builder
 
-ARG UV_VERSION=0.13.9
+ARG UV_VERSION=0.13
 ARG PYTHON_VERSION=3.15.2
 
 ENV PATH=/opt/python:/usr/local/bin/:$PATH \

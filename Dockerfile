@@ -39,4 +39,4 @@ COPY --from=builder /opt/python /opt/python
 COPY --from=builder /usr/local/bin/uv /usr/local/bin/uv
 COPY --from=builder /usr/local/bin/uvx /usr/local/bin/uvx
 
-ENTRYPOINT ["/usr/local/bin/uv"]
+CMD ["/usr/local/bin/uv", "help"]

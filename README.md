@@ -8,14 +8,13 @@ Minimal docker image with `uv` and `python` installed
 
 ## Properties
 
-- Entrypoint is `uv` executable
-- Contains pre-installed python
+- Contains pre-installed python (version corresponds to the tag)
 - Non-root user
-- Starting directly is `/app` and that's where you should mount your application
+- Starting directory is `/app` and that's where you should mount your application
 
 ## Ways to use
 
 - Mount `/app` with read+write permissions for `nonroot` user to access
 - Build custom image using this one as baseline and copy  your application into `/app`
     - Optionally run `uv sync --locked --no-cache` to install dependencies before packaging your application
-    - Override `ENTRYPOINT` to run your application instead of default `uv` entry point
+    - Override starting `CMD` to run your application instead of default `uv`

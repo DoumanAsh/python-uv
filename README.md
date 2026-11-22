@@ -9,7 +9,7 @@ Minimal docker image with `uv` and `python` installed
 ## Properties
 
 - Contains pre-installed python (version corresponds to the tag)
-- Non-root user
+- Non-root user with UID=[65532](https://github.com/GoogleContainerTools/distroless/blob/2adb3ee2e9717d0c723aa26a9d8e7320c76310a5/common/variables.bzl#L18)
 - Starting directory is `/app` and that's where you should mount your application
 - Distroless base image meaning no shell access
 

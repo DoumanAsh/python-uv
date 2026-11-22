@@ -3,9 +3,9 @@ ARG DEBIAN_VERSION=trixie
 FROM dhi.io/debian-base:$DEBIAN_VERSION-dev as builder
 
 ARG UV_VERSION=0.13
-ARG PYTHON_VERSION=3.15.2
+ARG PYTHON_VERSION=3.15
 
-ENV PATH=/opt/python:/usr/local/bin/:$PATH \
+ENV PATH=/usr/local/bin/:$PATH \
     UV_COMPILE_BYTECODE=1 \
     UV_LINK_MODE=copy \
     UV_PYTHON_INSTALL_DIR=/opt/python \
@@ -25,9 +25,11 @@ RUN set -e ;\
 ARG DEBIAN_VERSION=trixie
 FROM dhi.io/debian-base:$DEBIAN_VERSION
 
+ARG PYTHON_VERSION=3.15
+
 ENV LANG C.UTF-8
 
-ENV PATH=/opt/python:/usr/local/bin/$PATH \
+ENV PATH=/opt/python/cpython-$PYTHON_VERSION-linux-x86_64-gnu/bin/:/usr/local/bin/:$PATH \
     UV_COMPILE_BYTECODE=1 \
     UV_LINK_MODE=copy \
     UV_PYTHON_INSTALL_DIR=/opt/python \

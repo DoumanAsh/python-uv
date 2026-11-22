@@ -11,6 +11,7 @@ Minimal docker image with `uv` and `python` installed
 - Contains pre-installed python (version corresponds to the tag)
 - Non-root user
 - Starting directory is `/app` and that's where you should mount your application
+- Distroless base image meaning no shell access
 
 ## Ways to use
 

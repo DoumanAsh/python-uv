@@ -1,6 +1,6 @@
 # Download uv/python
 ARG DEBIAN_VERSION=trixie
-FROM dhi.io/debian-base:$DEBIAN_VERSION-dev as builder
+FROM docker.io/debian:$DEBIAN_VERSION-slim as builder
 
 ARG UV_VERSION=0.13
 ARG PYTHON_VERSION=3.15
@@ -22,8 +22,7 @@ RUN set -e ;\
     find ${UV_PYTHON_INSTALL_DIR} -type f -executable -exec strip --strip-unneeded {} \;
 
 # Build image by copying everything
-ARG DEBIAN_VERSION=trixie
-FROM dhi.io/debian-base:$DEBIAN_VERSION
+FROM gcr.io/distroless/cc:nonroot
 
 ARG PYTHON_VERSION=3.15
 

@@ -55,7 +55,7 @@ jobs:
         PYTHON_VERSION=${{ matrix.python_version }}
       post_build_script: |
           PYTHON_VERSION=$(podman run --rm localhost/${{ github.event.repository.name }} python --version | cut -d" " -f2)
-          echo "- PYTHON version: $PYTHON_VERSION" >> $GITHUB_STEP_SUMMARY
+          echo "- Python version: $PYTHON_VERSION" >> $GITHUB_STEP_SUMMARY
           PYTHON_SHORT_VERSION=$(echo "$PYTHON_VERSION" | cut -d"." -f 1,2)
 
           if [ "$PYTHON_SHORT_VERSION" = "3.15" ]; then

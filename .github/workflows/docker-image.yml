@@ -41,8 +41,6 @@ jobs:
     with:
       # Make sure to create repos in all container registries using the same name as the repo
       image_name: ${{ github.event.repository.name }}
-      # Need dhi.io for hardened alpine image
-      dhi_login: true
       container_file: "Dockerfile"
       use_oci: true
       platform: "linux"

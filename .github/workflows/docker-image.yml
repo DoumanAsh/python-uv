@@ -30,8 +30,9 @@ jobs:
       fail-fast: false
       matrix:
         python_version:
-          - 3.15
+          - 3.13
           - 3.14
+          - 3.15
     uses: DoumanAsh/douman-ci/.github/workflows/release-container.yaml@master
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

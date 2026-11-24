@@ -44,7 +44,7 @@ jobs:
       container_file: "Dockerfile"
       use_oci: true
       platform: "linux"
-      archs: "amd64 arm64"
+      archs: "amd64 arm64 ppc64le riscv64"
       upload_container: ${{ github.event_name != 'pull_request' }}
       docker_user: "douman"
       github_user: "doumanash"
